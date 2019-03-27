@@ -34,7 +34,7 @@ namespace GraphQLCore
             {
                 options.UseSqlServer(_config["ConnectionStrings:CarvedRock"]);
             });
-            services.AddSingleton<ProductRepository>();
+            services.AddScoped<ProductRepository>();
 
             services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(s.GetRequiredService));
             services.AddScoped<CarvedRockSchema>();
